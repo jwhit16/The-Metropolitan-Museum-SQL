@@ -1,0 +1,15 @@
+echo "# The-Metropolitan-Museum-SQL" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jwhit16/The-Metropolitan-Museum-SQL.git
+git push -u origin master
+
+/* Finds the number of peices where medium contains silver or gold */
+
+SELECT medium, COUNT(*)
+FROM met
+WHERE medium LIKE '%gold%' 
+   OR medium LIKE '%silver%'
+GROUP BY medium
+ORDER BY COUNT(*) DESC;
